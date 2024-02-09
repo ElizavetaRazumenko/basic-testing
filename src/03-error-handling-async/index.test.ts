@@ -1,15 +1,21 @@
-import { throwError, throwCustomError, resolveValue, MyAwesomeError, rejectCustomError } from './index';
+import {
+  throwError,
+  throwCustomError,
+  resolveValue,
+  MyAwesomeError,
+  rejectCustomError,
+} from './index';
+
+const testValue = 'Some test value';
 
 describe('resolveValue', () => {
   test('should resolve provided value', async () => {
-    const testValue = 'Some test value';
     expect(await resolveValue(testValue)).toBe(testValue);
   });
 });
 
 describe('throwError', () => {
   test('should throw error with provided message', () => {
-    const testValue = 'Some test value';
     expect(() => throwError(testValue)).toThrowError(testValue);
   });
 
